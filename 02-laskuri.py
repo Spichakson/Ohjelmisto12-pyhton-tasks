@@ -1,0 +1,5 @@
+days = input('How many days?: ')
+days = int(days)
+seconds = (days*86400)
+print(f'In {days} days: {seconds} seconds.')
+print(f"{seconds / 60} minutes")
