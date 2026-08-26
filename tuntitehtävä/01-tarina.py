@@ -1,9 +1,10 @@
-nimi = 'Olle'
-millanen = 'vanha'
-lempi = 'kinuskijäätelö'
-aika = 'koko päivän'
-nainen = 'Elina'
-car = 'volkkarilla'
-sen = 'Elinan'
-print(f"{nimi} on {millanen} mies töissä jätskikioskissa. Hähen lempijäätelö on {lempi}, ja hän syö sitä {aika} ja ei myy kennellekaan.")
-print(f"Eräänä paivänä hänen luokse tuli {nainen} {car}. {sen} lempijäätelö oli lakriitsijäätelö. Ne söivät jätskiä yhdessä")
+nimi = input('Kirjoita nimi: ')
+millanen = input('Millainen hän on?: ')
+lempi = input('Kirjoita lempiruoka: ')
+aika = input('Kirjoita milloin?: ')
+nainen = input('Kirjoita naisen nimi: ')
+car = input('Kirjoita auton brändi: ')
+
+print(f"{nimi} on {millanen} mies töissä jätskikioskissa. Hähen lempiruoka on {lempi}, ja hän syö sitä {aika} ja ei anna kennellekaan.")
+      
+print(f"Eräänä paivänä hänen luokse tuli {nainen} {car}illa. {nainen}n lempijäätelö oli lakriitsijäätelö. Ne söivät jätskiä yhdessä");
