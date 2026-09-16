@@ -23,13 +23,24 @@ def job_choose():
         else:
             title = input('Lisää työpaikka: ')
             jobs_chosen.append(title)
+
+def kela_money():
+    kela = input('Tervetuloa Kelaan! Miten voisimme auttaa?(raha/takaisin): \n' \
+    '')
+    if kela == "raha":
+        if money >= 100:
+            print("Me emme voi antaa sinulle tukea, kun sinulla on niin paljon rahaa!")
+        else:
+
+            
+    return
     
     
 
 jobs_available = ["myyjä", "sairaanhoitaja", "koodari", "kuljettaja", "siivoja", "kokki", "kielenopettaja", "puutarhuri"]
 jobs_chosen = []
 
-commands = ['käyttäjä', 'muoka nimi', 'lopeta', 'valita paikat']
+commands = ['käyttäjä', 'muoka nimi', 'lopeta', 'aloita', 'valita paikat', ]
 
 
 
@@ -58,7 +69,12 @@ while True:
     elif command == 'kommentolista':
         commands_list()
     elif command == 'aloita':
-        job_search()
+        tie = input("Ensin sinun täytyy valita: menetkö töihin tai kelaan?(työ/kela/takaisin): \n ")
+        if tie == 'työ':
+            job_search()
+        elif tie == 'kela':
+            kela_money()
+        
     elif command == 'valita paikat':
         job_choose()
 
