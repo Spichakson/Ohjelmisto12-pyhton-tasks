@@ -30,9 +30,7 @@ def kela_money():
     if kela == "raha":
         if money >= 100:
             print("Me emme voi antaa sinulle tukea, kun sinulla on niin paljon rahaa!")
-        else:
-
-            
+        
     return
     
     
@@ -61,21 +59,21 @@ while True:
     if command == 'lopeta':
         print('Lopetettu!')
         break
-    elif command == 'käyttäjä':
+    if command == 'käyttäjä':
         print(f'Nimi: {name}')
         print(f'Ikä: {age}')
-    elif command == 'muoka nimi':
+    if command == 'muoka nimi':
         name = input('Anna uusi nimi: ')
-    elif command == 'kommentolista':
+    if command == 'kommentolista':
         commands_list()
-    elif command == 'aloita':
+    if command == 'aloita':
         tie = input("Ensin sinun täytyy valita: menetkö töihin tai kelaan?(työ/kela/takaisin): \n ")
         if tie == 'työ':
             job_search()
         elif tie == 'kela':
             kela_money()
         
-    elif command == 'valita paikat':
+    if command == 'valita paikat':
         job_choose()
 
     
