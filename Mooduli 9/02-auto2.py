@@ -12,7 +12,6 @@ class Auto:
         else:
             self.tamanhetkinen_nopeus += muutos
 
-        self.kuljettu_matka = muutos
 
 
 auto1 = Auto("ABC-123", 142)
