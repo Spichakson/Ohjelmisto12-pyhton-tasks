@@ -1,7 +1,17 @@
 def main_menu():
     print("=== MAIN MENU ===")
-    print("\n 1 - uusi peli" "\n 2 - Profile" "3 - ")
-    dia = input("\n Valita(1-3): ")
+    print("\n 1 - Pelaa" "\n 2 - Profile" "\n 3 - Lopeta ")
+    action = int(input("\n Valita toiminta(1-3): "))
+    if action == 1:
+        return
+    elif action == 2:
+        print(f"Nimi: {name}")
+        main_menu()
+    elif action == 3:
+        print("\n == GAME OVER ==")
+        quit()
+    
+
 
 
 
@@ -38,7 +48,9 @@ def kela_money():
         
     return
 
-
+def new_game():
+    print('\n Moi ja tervetuloa Kotkaan! Tässä sinä yrität tehdä mahdototonta - hakea töitä!')
+    pass
 
 
 
@@ -47,19 +59,28 @@ def kela_money():
 
 
 class Player:
-    def __init__(self, name, age, money, location):
+    def __init__(self, name, money, location):
         self.name = name
-        self.age = age
         self.money = money
         self.location = location
 
+    def player_info(self):
+        print(f"Nimi: {self.name}")
+        print(f"Raha: {self.money}")
+        print(f"Sijainti: {self.location}")
+
+
 
 class Job:
-    def __init__(self, name, work_hours, salary):
-        self.name = name
+    def __init__(self, title, work_hours, salary):
+        self.title = title
         self.work_hours = work_hours
         self.salary = salary
 
+    def show_info(self):
+        print(f" {self.title} {self.work_hours} h, palkka {self.salary}")
+
+
 
 
 
@@ -74,35 +95,42 @@ class Job:
     
     
 
-jobs_available = ["myyjä", "sairaanhoitaja", "koodari", "kuljettaja", "siivoja", "kokki", "kielenopettaja", "puutarhuri"]
-jobs_chosen = []
-
-commands = ['käyttäjä', 'muoka nimi', 'lopeta', 'aloita', 'valita paikat', ]
-
+jobs_available = ("myyjä", "sairaanhoitaja", "koodari", "kuljettaja", 
+"siivoja", "kokki", "kielenopettaja", "puutarhuri")
+commands = ['pelaaja', 'muoka nimi', 'lopeta', 'aloita', 'valita paikat', ]
 
 
-print('Moi ja tervetuloa Kotkaan! Tässä sinä yrität tehdä mahdototonta - hakea töitä!')
-name = input('Mikä sinun nimi on?: ')
+
+
+
+# Program start and main menu
+print("=== KOTKAN MOST WANTED ===")
+name = input('\nMikä sinun nimi on?: ')
 age = int(input('Kuinka ikäinen olet?: '))
-money = 100
 if age < 12:
     print('Olet liian nuori!')
     quit()
-elif age >= 12:
-    print(f'Nimi: {name}')
-    print(f'Ikä: {age}')
-    print(f'Rahaa: {money}€')
+
+money = 100
+location = "Koti"
+main_menu()
+
+player1 = Player(name, money, location)
+
+# Game prosses
+new_game()
+
+
 while True:
-    print('Käytä kommentolista')
+    print('\n Käytä kommentolista')
     command = input('Anna kommento: ')
     if command == 'lopeta':
         print('Lopetettu!')
         break
-    if command == 'käyttäjä':
-        print(f'Nimi: {name}')
-        print(f'Ikä: {age}')
+    if command == 'pelaaja':
+        player1.player_info()
     if command == 'muoka nimi':
-        name = input('Anna uusi nimi: ')
+        player1.name = input('Anna uusi nimi: ')
     if command == 'kommentolista':
         commands_list()
     if command == 'aloita':
