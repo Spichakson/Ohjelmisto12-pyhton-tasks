@@ -1,9 +1,14 @@
+def main_menu():
+    print("=== MAIN MENU ===")
+    print("\n 1 - uusi peli" "\n 2 - Profile" "3 - ")
+    dia = input("\n Valita(1-3): ")
+
+
+
 def commands_list():
     print('Kommennot: ')
     for i in commands:
         print(i)
-
-
 
 def job_search():
     print("Työpaikat saatavilla: ")
@@ -32,6 +37,40 @@ def kela_money():
             print("Me emme voi antaa sinulle tukea, kun sinulla on niin paljon rahaa!")
         
     return
+
+
+
+
+
+
+
+
+
+class Player:
+    def __init__(self, name, age, money, location):
+        self.name = name
+        self.age = age
+        self.money = money
+        self.location = location
+
+
+class Job:
+    def __init__(self, name, work_hours, salary):
+        self.name = name
+        self.work_hours = work_hours
+        self.salary = salary
+
+
+
+
+
+
+
+
+
+
+
+
     
     
 
@@ -70,8 +109,7 @@ while True:
         tie = input("Ensin sinun täytyy valita: menetkö töihin tai kelaan?(työ/kela/takaisin): \n ")
         if tie == 'työ':
             job_search()
-        elif tie == 'kela':
-            kela_money()
+        
         
     if command == 'valita paikat':
         job_choose()
