@@ -1,3 +1,5 @@
-items = [1, 2, 3]
+from tqdm import tqdm
+import time
 
-print(f"Tässä sijainnissa on esineet: {items}")
+for item in tqdm(range(100), desc="Завантаження"):
+    time.sleep(0.02)
