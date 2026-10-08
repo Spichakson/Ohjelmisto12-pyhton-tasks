@@ -38,10 +38,9 @@ def run_game():
     
    # entrance, age check and player creation
     
-    #name = input('\nMikä sinun nimi on?: ')
-    #age = int(input('Kuinka ikäinen olet?: '))
-    name = "Artem"
-    age = 26
+    name = input('\nMikä sinun nimi on?: ')
+    age = int(input('Kuinka ikäinen olet?: '))
+
     if age < 12:
         print('Olet liian nuori!')
         quit()
